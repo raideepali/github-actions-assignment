@@ -1,0 +1,12 @@
+name: Issue Workflow
+on: issues
+
+jobs:
+  output_issue_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event details
+        run: |
+          echo "An issue was triggered!"
+          echo "Issue Title: ${{ github.event.issue.title }}"
+          echo "Issue Action: ${{ github.action }}"
